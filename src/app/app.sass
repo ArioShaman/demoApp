@@ -1,0 +1,77 @@
+// http://ionicframework.com/docs/theming/
+
+
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+$bar-height: 40px
+$line-height: 3px
+$header-height: 90px
+
+.main-container
+  position: absolute
+  height: 100%
+  width: 100%
+  display: flex
+  flex-direction: row
+  flex-wrap: nowrap
+  .content
+    height: 100%
+    width: calc(100% - 40px)
+.my-header
+  height: $header-height
+  width: 100%
+  background-color: #EBEBEB
+  .avatar
+    position: absolute
+    height: 40px
+    width: 40px
+    background-color: grey
+    top: 40px
+    border-radius: 50%
+    margin-left: 10px
+ion-nav
+  position: relative
+  margin-top:  $header-height
+  height: calc(100% - #{ $header-height } - #{$bar-height})
+
+.bottom-bar
+  position: absolute
+  height: 50px
+  background-color: white
+  width: 100%
+  top: calc(100% - #{$bar-height})
+  .bar-content, .line
+    display: flex
+    flex-direction: row
+  .line
+    height: $line-height
+    // background-color: grey
+    .line-el
+      width: 100%
+      height:  $line-height
+      .point
+        margin-left:  30%
+        width: 40%
+        height:  $line-height
+      .active
+        transition: 0.5s
+        background-color:  #36B5B2
+  .bar-content
+    .bar-el
+      height: $bar-height
+      width: 100%
+      ion-icon
+        font-size: 25px
+        margin-top: 7px
+        margin-left: calc((100% - 25px)/2)

@@ -1,1 +1,41 @@
-<ion-nav [root]="rootPage"></ion-nav>
+<!-- <ion-nav [root]="contactsPage"></ion-nav>-->
+
+<div class="main-container">
+  <div>
+    <side-bar></side-bar>
+  </div>
+
+  <div class="content">
+    <div class="my-header">
+      <div class="avatar"></div>
+    </div>
+    <ion-nav  #myNav></ion-nav>
+
+    <div class="bottom-bar">
+      <div class="line">
+        <div class="line-el">
+          <div [ngClass]="rootPage == 'messages' ? 'active':''" class="point"></div>
+        </div>
+        <div class="line-el">
+          <div [ngClass]="rootPage == 'home' ? 'active':''" class="point"></div>
+        </div>
+        <div class="line-el">
+          <div [ngClass]="rootPage == 'contacts' ? 'active':''" class="point"></div>
+        </div>
+      </div>
+      <div class="bar-content">
+        <div class="bar-el" (click)="messages()">
+          <ion-icon name="chatboxes"></ion-icon>
+        </div>
+        <div class="bar-el">
+          <ion-icon name="home"></ion-icon>
+        </div>
+        <div class="bar-el">
+          <ion-icon name="contacts" (click)="contacts()"></ion-icon>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
