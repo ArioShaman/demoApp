@@ -1,20 +1,24 @@
-import { Component } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
-/**
- * Generated class for the SideBarComponent component.
- *
- * See https://angular.io/api/core/Component for more info on Angular
- * Components.
- */
 @Component({
   selector: 'side-bar',
   templateUrl: 'side-bar.html'
 })
 export class SideBarComponent {
 
-  text: string;
+  @Output() activeChange:EventEmitter<Boolean> = new EventEmitter<Boolean>();
+  @Input() active:boolean;
+  @Input() opened:boolean;
 
   constructor() {
   }
 
+  ngOnInit(){
+    console.log(this.active);
+  }
+  public activate(){
+    this.active = true;
+    this.activeChange.emit(this.active);
+    console.log('activate' + this.active);
+  }
 }

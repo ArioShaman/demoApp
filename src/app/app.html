@@ -1,20 +1,26 @@
 <!-- <ion-nav [root]="contactsPage"></ion-nav>-->
 
 <div class="main-container">
-  <div>
-    <side-bar></side-bar>
+  <div [ngClass]="[ opened ? 'top' : 'no-top', active ? 'top':'no-top']">
+    <side-bar [(active)]="active" [@opened]="opened"></side-bar>
   </div>
 
   <div class="content">
     <div class="my-header">
-      <div class="avatar"></div>
+      <div [hidden]="opened" class="avatar" (click)="open()">
+        <img [src]="'assets/avatars/ava-03.jpg'" alt="image">
+      </div>
+      <div [hidden]="!opened" class="close" (click)="close()">
+        <img [src]="'assets/icon/plus.svg'" alt="image">
+      </div>
     </div>
-    <ion-nav  #myNav></ion-nav>
+    <ion-nav [ngClass]="[opened ? 'left-opened':'', active ? 'left-active':'']"  #myNav></ion-nav>
 
-    <div class="bottom-bar">
+    <div class="bottom-bar" [ngClass]="[opened ? 'left-opened':'', active ? 'left-active':'']">
       <div class="line">
         <div class="line-el">
-          <div [ngClass]="rootPage == 'messages' ? 'active':''" class="point"></div>
+          <div [ngClass]="rootPage == 'messages' ? 'active':''" class="point">
+          </div>
         </div>
         <div class="line-el">
           <div [ngClass]="rootPage == 'home' ? 'active':''" class="point"></div>

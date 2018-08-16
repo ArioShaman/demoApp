@@ -1,1 +1,55 @@
+$list-h: 75px
+
 page-messages
+  background-color: white
+  .input
+    height: 40px
+    width: calc(100% - 20px)
+    margin-left: 10px
+    border-radius: 5px
+    background-color: #EBEBEB
+
+.list-container
+  overflow-y: scroll
+  height: calc(100% - 50px)
+  width: 100%
+  margin-top: 10px
+  .list-el
+    height: $list-h
+    width: 100%
+    border-bottom: 1px solid #EBEBEB
+    display: flex
+    flex-direction: row
+    .avatar-cont
+      height: $list-h
+      width: $list-h
+      .avatar
+        height: 56px
+        width: 56px
+        border-radius: 50%
+        background-color: #EBEBEB
+        margin-left: 10px
+        margin-top: calc((#{$list-h} - 56px)/2)
+        img
+          border-radius: 50%
+          height: 100%
+          width: 100%
+    .message-info
+      height: $list-h
+      width: 100%
+      ion-row
+        margin-top: 5px
+      .title
+        font-size: 17px
+        font-weight: 600
+        color: #363636 !important
+      .data
+        font-size: 10px
+      .message
+        padding-top: 5px !important
+        font-size: 12px
+      .col-item
+        padding-top: 0px
+        height: 20px
+        color: #363636
+        // background-color: #EBEBEB

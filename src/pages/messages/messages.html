@@ -1,3 +1,26 @@
-<ion-content padding>
-  hello world
-</ion-content>
+<div class="input"></div>
+
+<div class="list-container">
+  <div *ngFor="let message of messages" class="list-el">
+    <div class="avatar-cont">
+      <div class="avatar">
+        <img [src]="message.ava" alt="image">
+      </div>
+    </div>
+    <div class="message-info">
+      <ion-grid>
+        <ion-row>
+          <ion-col col-9 class="col-item title">{{message.name}}</ion-col>
+          <ion-col col-3 class="col-item data">{{message.data}}</ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col col-10 class="col-item message">
+            {{message.list.slice(-1)[0].message | slice:0:30}} ...
+          </ion-col>
+          <ion-col col-2 class="col-item"></ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+  </div>
+</div>

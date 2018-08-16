@@ -1,5 +1,129 @@
 side-bar
+  background-color: #2B2338 !important
   .side-bar
+    z-index: 2000
     height: 100%
-    width: 40px
-    background-color: grey
+    width: 0px
+    background-color: #2B2338 !important
+    transition: 0.5s
+    .shadow-click
+      z-index: 1000
+      display: none
+      position: absolute
+      height: 100%
+      width: 60px
+    .avatar
+      position: absolute
+      height: 40px
+      width: 40px
+      background-color: grey
+      top: 40px
+      border-radius: 50%
+      margin-left: 10px
+      img
+        border-radius: 50%
+    .ic-01
+      transition: 0.4s
+      transform: translateX(-100px)
+    .ic-02
+      transition: 0.5s
+      transform: translateX(-130px)
+    .ic-03
+      transition: 0.6s
+      transform: translateX(-160px)
+    .ic-04
+      transition: 0.7s
+      transform: translateX(-190px)
+    .ic-05
+      transition: 0.8s
+      transform: translateX(-220px)
+    .ic-06
+      transition: 0.9s
+      transform: translateX(-250px)
+    .ic-07
+      transition: 1.0s
+      transform: translateX(-280px)
+    .line-icons
+      transition-timing-function: ease-in-out
+      position: relative
+      // display: none
+      height: 250px
+      width: 0px
+      margin-left: 10px
+      top: 100px
+      // background-color: #EBEBEB
+      display: flex
+      flex-direction: row
+      flex-wrap: wrap
+    .bottom-icons
+      transition: 0.5s
+      // display: none
+      position: absolute
+      height: 75px
+      // background-color: #EBEBEB
+      width: 0px
+      margin-left: 10px
+      bottom: 10px
+      display: flex
+      flex-direction: row
+      flex-wrap: wrap
+    .activated-icons.line-icons, .activated-icons.bottom-icons
+      flex-direction: row
+      width: 250px
+      height: 40px
+      .icon
+        margin-left: 5px
+    .opened-icons
+      transition: 0.5s
+      // display: block
+      width: 40px
+      .icon
+        transform: translateX(0px)
+
+  .background
+    background-color: #2B2338 !important
+    height: 100%
+  .opened
+    width: 60px
+    height: 100%
+    .shadow-click
+      display: block
+    .disable
+      display: none !important
+  .active-menu
+    height: 100%
+    width: 280px
+
+.no-top
+  transition: 1.0s
+  z-index: 0
+.top
+  transition: 1.0s
+  z-index: 2000
+
+.icon
+  background-size: 25px
+  background-position: 5px 5px
+  background-repeat: no-repeat
+  margin-top: 5px
+  height: 35px
+  width: 35px
+  // background-color: grey
+  transition: 0.5s
+  // transform: translateX(-100px)
+.folder
+  background-image: url('/assets/icon/folder.svg')
+.image
+  background-image: url('/assets/icon/image.svg')
+.globus
+  background-image: url('/assets/icon/globus.svg')
+.palette
+  background-image: url('/assets/icon/palette.svg')
+.chema
+  background-image: url('/assets/icon/chema.svg')
+.outline
+  background-image: url('/assets/icon/outline.svg')
+.location
+  background-image: url('/assets/icon/location.svg')
+.settings
+  background-image: url('/assets/icon/settings.svg')

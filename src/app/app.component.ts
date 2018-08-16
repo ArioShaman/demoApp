@@ -14,9 +14,10 @@ import { NavController } from 'ionic-angular';
 export class MyApp {
   @ViewChild('myNav') nav: NavController;
 
-  rootPage:string = 'messages';
-  currentRoot:any;
-
+  public rootPage:string = 'messages';
+  public currentRoot:any;
+  public opened:boolean =  false;
+  public active:boolean =  false;
   constructor(platform: Platform,
               statusBar: StatusBar,
               splashScreen: SplashScreen,
@@ -43,4 +44,17 @@ export class MyApp {
      this.rootPage = 'contacts';
    }
 
+   public open(){
+     this.opened = true;
+     this.active = false;
+   }
+
+   public close():void{
+     this.active = false;
+     this.opened = false;
+   }
+
+   onChange(){
+     this.active = false;
+   }
 }
