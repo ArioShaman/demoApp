@@ -2,10 +2,10 @@
 <div class="title-cont">Album</div>
 <div class="album-preview">
   <div *ngFor="let albEl of album" class="album">
-    <div class="album-img">
-      {{albEl.id}}
+    <div [ngStyle]="{'background-image': 'url('+ albEl.cover + ')'}" class="album-img">
+      <!-- <img [src]="albEl.cover" alt="image"> -->
     </div>
-    <div class="album-name">Pet</div>
+    <div class="album-name">{{albEl.name}}</div>
   </div>
 </div>
 
