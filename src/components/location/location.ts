@@ -1,5 +1,7 @@
 import { Component, ViewChild, ElementRef } from '@angular/core';
 import { Geolocation } from '@ionic-native/geolocation';
+import { mapStyle } from './map-style'
+import { ThemeServiceProvider } from '../../providers/theme-service/theme-service'
 
 declare var google;
 
@@ -11,9 +13,21 @@ export class LocationComponent {
 
   @ViewChild('map') mapElement: ElementRef;
   map: any;
+  public mapStyle;// = mapStyle;
+  public darkMode:boolean;
 
-  constructor(public geolocation: Geolocation) {
+  constructor(
+    public themeService: ThemeServiceProvider,
+    public geolocation: Geolocation
+  ) {
+    this.darkMode = this.themeService.darkMode;
+    this.themeService.darkModeChange.subscribe((value) => {
+      this.darkMode = value;
+      console.log('change');
+      this.loadMap();
+    });
   }
+
 
   ngOnInit(){
     this.loadMap();
@@ -25,16 +39,30 @@ export class LocationComponent {
 
       let latLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
 
+      if(this.darkMode){
+        this.mapStyle = mapStyle;
+      }else{
+        this.mapStyle = [];
+      }
+
       let mapOptions = {
         center: latLng,
         zoom: 15,
-        mapTypeId: google.maps.MapTypeId.ROADMAP
+        mapTypeId: google.maps.MapTypeId.ROADMAP,
+        styles: this.mapStyle,
       }
 
       this.map = new google.maps.Map(this.mapElement.nativeElement, mapOptions);
 
     }, (err) => {
-      console.log(err);
+      let latLng = new google.maps.LatLng(-34.9290, 138.6010);
+      let mapOptions = {
+        center: latLng,
+        zoom: 15,
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+      }
+      this.map = new google.maps.Map(this.mapElement.nativeElement, mapOptions);
+
     });
   }
 
