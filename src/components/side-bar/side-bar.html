@@ -37,11 +37,12 @@
     </div>
 
     <div [ngClass]="[opened ? 'opened-icons': '', active ? 'activated-icons':'']"  class="bottom-icons">
-      <div class="bottom-icon-cont ic-01" (click)="onTab('chema')">
+      <div class="bottom-icon-cont ic-01" (click)="changeMode()">
           <div  [ngClass]="active && activeTab == 'chema' ? 'active': ''"
             class="icon chema"
           ></div>
-          <span>Dark/Light</span>
+          <span [hidden]="!darkMode">Dark theme</span>
+          <span [hidden]="darkMode">Light theme</span>
       </div>
       <div class="bottom-icon-cont ic-02" (click)="onTab('settings')">
         <div  [ngClass]="active && activeTab == 'settings' ? 'active': ''"

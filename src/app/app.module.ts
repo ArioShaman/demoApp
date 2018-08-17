@@ -8,6 +8,8 @@ import { MyApp } from './app.component';
 import { MessagesPage } from '../pages/messages/messages';
 import { ContactsPage } from '../pages/contacts/contacts';
 import { ComponentsModule } from '../components/components.module';
+import { ThemeServiceProvider } from '../providers/theme-service/theme-service';
+import { Ng2CacheModule } from 'ng2-cache';
 
 @NgModule({
   declarations: [
@@ -18,6 +20,7 @@ import { ComponentsModule } from '../components/components.module';
   imports: [
     BrowserModule,
     ComponentsModule,
+    Ng2CacheModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
@@ -29,7 +32,8 @@ import { ComponentsModule } from '../components/components.module';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    ThemeServiceProvider
   ]
 })
 export class AppModule {}

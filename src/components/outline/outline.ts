@@ -15,7 +15,6 @@ export class OutlineComponent {
   text: string;
 
   constructor() {
-    console.log('Hello OutlineComponent Component');
     this.text = 'Location component';
   }
 
