@@ -1,10 +1,11 @@
-<div class="side-bar" [ngClass]="[active ? 'active-menu':'', opened ? 'opened':'']">
+<div class="side-bar"
+[ngClass]="[active ? 'active-menu':'', opened ? 'opened':'', darkMode ? 'darkMode':'']">
   <div class="shadow-click" [ngClass]="active ? 'disable':''" (click)="activate()"></div>
   <div class="avatar">
     <img [src]="'assets/avatars/ava-03.jpg'" alt="image">
   </div>
 
-  <div class="background">
+  <div class="background" >
     <div [ngClass]="[opened ? 'opened-icons': '', active ? 'activated-icons':'']" class="line-icons">
       <div [ngClass]="active && activeTab == 'image' ? 'active': ''"
         class="icon ic-01 image" (click)="onTab('image')"
@@ -41,14 +42,14 @@
           <div  [ngClass]="active && activeTab == 'chema' ? 'active': ''"
             class="icon chema"
           ></div>
-          <span [hidden]="!darkMode">Dark theme</span>
-          <span [hidden]="darkMode">Light theme</span>
+          <span [hidden]="darkMode">Dark theme</span>
+          <span [hidden]="!darkMode">Light theme</span>
       </div>
       <div class="bottom-icon-cont ic-02" (click)="onTab('settings')">
         <div  [ngClass]="active && activeTab == 'settings' ? 'active': ''"
           class="icon settings"
         ></div>
-        <span>Language</span>
+        <span>Settings</span>
       </div>
     </div>
   </div>
