@@ -2,7 +2,7 @@
 <div class="title-cont">Album</div>
 <div class="album-preview">
   <div *ngFor="let albEl of album" class="album">
-    <div [ngStyle]="{'background-image': 'url('+ albEl.cover + ')'}" class="album-img">
+    <div [ngStyle]="{'background-image': 'url('+ albEl.smCover + ')'}" class="album-img">
       <!-- <img [src]="albEl.cover" alt="image"> -->
     </div>
     <div class="album-name">{{albEl.name}}</div>
