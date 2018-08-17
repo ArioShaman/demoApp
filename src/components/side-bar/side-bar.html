@@ -6,17 +6,49 @@
 
   <div class="background">
     <div [ngClass]="[opened ? 'opened-icons': '', active ? 'activated-icons':'']" class="line-icons">
-      <div class="icon ic-01 image"></div>
-      <div class="icon ic-02 location"></div>
-      <div class="icon ic-03 palette"></div>
-      <div class="icon ic-04 outline"></div>
-      <div class="icon ic-05 folder"></div>
-      <div class="icon ic-06 settings"></div>
+      <div [ngClass]="active && activeTab == 'image' ? 'active': ''"
+        class="icon ic-01 image" (click)="onTab('image')"
+      ></div>
+      <div [ngClass]="active && activeTab == 'location' ? 'active': ''"
+        class="icon ic-02 location" (click)="onTab('location')"
+      ></div>
+      <div  [ngClass]="active && activeTab == 'palette' ? 'active': ''"
+        class="icon ic-03 palette" (click)="onTab('palette')"
+      ></div>
+      <div  [ngClass]="active && activeTab == 'outline' ? 'active': ''"
+        class="icon ic-04 outline" (click)="onTab('outline')"
+      ></div>
+      <div  [ngClass]="active && activeTab == 'folder' ? 'active': ''"
+        class="icon ic-05 folder" (click)="onTab('folder')"
+      ></div>
+      <div  [ngClass]="active && activeTab == 'globus' ? 'active': ''"
+        class="icon ic-06 globus" (click)="onTab('globus')"
+      ></div>
+    </div>
+
+    <div class="side-bar-content" [ngClass]="active ? 'active-content':''">
+      <image     [hidden]="activeTab != 'image'"></image>
+      <location  [hidden]="activeTab != 'location'"></location>
+      <palette   [hidden]="activeTab != 'palette'"></palette>
+      <outline   [hidden]="activeTab != 'outline'"></outline>
+      <language  [hidden]="activeTab != 'globus'"></language>
+      <folder    [hidden]="activeTab != 'folder'"></folder>
+      <settings  [hidden]="activeTab != 'settings'"></settings>
     </div>
 
     <div [ngClass]="[opened ? 'opened-icons': '', active ? 'activated-icons':'']"  class="bottom-icons">
-      <div class="icon ic-01 chema"></div>
-      <div class="icon ic-02 globus"></div>
+      <div class="bottom-icon-cont ic-01" (click)="onTab('chema')">
+          <div  [ngClass]="active && activeTab == 'chema' ? 'active': ''"
+            class="icon chema"
+          ></div>
+          <span>Dark/Light</span>
+      </div>
+      <div class="bottom-icon-cont ic-02" (click)="onTab('settings')">
+        <div  [ngClass]="active && activeTab == 'settings' ? 'active': ''"
+          class="icon settings"
+        ></div>
+        <span>Language</span>
+      </div>
     </div>
   </div>
 

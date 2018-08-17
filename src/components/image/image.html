@@ -1,0 +1,35 @@
+<!-- Generated template for the ImageComponent component -->
+<div class="title-cont">Album</div>
+<div class="album-preview">
+  <div *ngFor="let albEl of album" class="album">
+    <div class="album-img">
+      {{albEl.id}}
+    </div>
+    <div class="album-name">Pet</div>
+  </div>
+</div>
+
+<div class="title-cont">Scenery</div>
+
+<div class="images" overflow-scroll=true>
+  <!-- <div class="img"></div> -->
+  <div class="column">
+    <div
+        [hidden]="odd"
+        [ngStyle]="{ 'min-height.px': image.height }"
+        *ngFor="let image of images; let i = index; let odd = odd"
+        class="img"
+      >
+      {{image.id}}
+    </div>
+  </div>
+  <div class="column">
+    <div [hidden]="even"
+         [ngStyle]="{ 'min-height.px': image.height }"
+         *ngFor="let image of images; let i = index; let even = even"
+         class="img"
+    >
+      {{image.id}}
+    </div>
+  </div>
+</div>

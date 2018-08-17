@@ -17,7 +17,7 @@ side-bar
       height: 40px
       width: 40px
       background-color: grey
-      top: 40px
+      top: 10px
       border-radius: 50%
       margin-left: 10px
       img
@@ -43,6 +43,17 @@ side-bar
     .ic-07
       transition: 1.0s
       transform: translateX(-280px)
+    .side-bar-content
+      height: calc(100% - 105px - 40px)
+      width: 90%
+      margin-left: 5%
+      // background-color: #EBEBEB
+      display: none
+      margin-top: 70px
+    .active-content
+      display: block
+      opacity: 1
+      animation: FadeIn 1.5s ease-in
     .line-icons
       transition-timing-function: ease-in-out
       position: relative
@@ -50,13 +61,14 @@ side-bar
       height: 250px
       width: 0px
       margin-left: 10px
-      top: 100px
+      top: 60px
       // background-color: #EBEBEB
       display: flex
       flex-direction: row
       flex-wrap: wrap
     .bottom-icons
       transition: 0.5s
+      transition-timing-function: ease-in-out
       // display: none
       position: absolute
       height: 75px
@@ -67,17 +79,36 @@ side-bar
       display: flex
       flex-direction: row
       flex-wrap: wrap
+      .bottom-icon-cont
+        height: 35px
+        width: 35px
+        display: flex
+        flex-direction: row
+        span
+          display: none
+          color: white
+          padding-top: 14px
+          font-size: 14px
     .activated-icons.line-icons, .activated-icons.bottom-icons
       flex-direction: row
       width: 250px
       height: 40px
+      transition: 0.3s
+      transition-timing-function: ease-in
       .icon
         margin-left: 5px
+      .bottom-icon-cont
+        width: 50%
+        span
+          display: block
+          opacity: 1
+          animation: FadeIn 1s ease-in
+
     .opened-icons
       transition: 0.5s
       // display: block
       width: 40px
-      .icon
+      .icon, .bottom-icon-cont
         transform: translateX(0px)
 
   .background
@@ -113,17 +144,39 @@ side-bar
   // transform: translateX(-100px)
 .folder
   background-image: url('/assets/icon/folder.svg')
+.folder.active
+  background-image: url('/assets/icon/folder-active.svg')
 .image
   background-image: url('/assets/icon/image.svg')
+.image.active
+  background-image: url('/assets/icon/image-active.svg')
 .globus
   background-image: url('/assets/icon/globus.svg')
+.globus.active
+  background-image: url('/assets/icon/globus-active.svg')
 .palette
   background-image: url('/assets/icon/palette.svg')
+.palette.active
+  background-image: url('/assets/icon/palette-active.svg')
 .chema
   background-image: url('/assets/icon/chema.svg')
+.chema.active
+  background-image: url('/assets/icon/chema-active.svg')
 .outline
   background-image: url('/assets/icon/outline.svg')
+.outline.active
+  background-image: url('/assets/icon/outline-active.svg')
 .location
   background-image: url('/assets/icon/location.svg')
+.location.active
+  background-image: url('/assets/icon/location-active.svg')
 .settings
   background-image: url('/assets/icon/settings.svg')
+.settings.active
+  background-image: url('/assets/icon/settings-active.svg')
+
+@keyframes FadeIn
+  0%
+    opacity: 0
+  100%
+    opacity: 1

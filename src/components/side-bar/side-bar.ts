@@ -9,6 +9,7 @@ export class SideBarComponent {
   @Output() activeChange:EventEmitter<Boolean> = new EventEmitter<Boolean>();
   @Input() active:boolean;
   @Input() opened:boolean;
+  public activeTab = 'image';
 
   constructor() {
   }
@@ -20,5 +21,9 @@ export class SideBarComponent {
     this.active = true;
     this.activeChange.emit(this.active);
     console.log('activate' + this.active);
+  }
+
+  public onTab(tabName){
+    this.activeTab = tabName;
   }
 }
