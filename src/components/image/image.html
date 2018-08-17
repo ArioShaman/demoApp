@@ -16,20 +16,18 @@
   <div class="column">
     <div
         [hidden]="odd"
-        [ngStyle]="{ 'min-height.px': image.height }"
         *ngFor="let image of images; let i = index; let odd = odd"
         class="img"
       >
-      {{image.id}}
+        <img [src]="image.image">
     </div>
   </div>
   <div class="column">
     <div [hidden]="even"
-         [ngStyle]="{ 'min-height.px': image.height }"
          *ngFor="let image of images; let i = index; let even = even"
          class="img"
     >
-      {{image.id}}
+      <img [src]="image.image">
     </div>
   </div>
 </div>

@@ -1,42 +1,38 @@
  export const IMAGES = [
    {
      id: 1,
-     height: 50
+     image: 'assets/imgs/image-01.jpg',
    },
    {
      id: 2,
-     height: 200
+     image: 'assets/imgs/image-05.jpg',
    },
    {
      id: 3,
-     height: 250
+     image: 'assets/imgs/image-03.jpg',
    },
    {
      id: 4,
-     height: 250
+     image: 'assets/imgs/image-08.jpg',
    },
    {
      id: 5,
-     height: 100
+     image: 'assets/imgs/image-04.jpg',
    },
    {
      id: 6,
-     height: 100
+     image: 'assets/imgs/image-02.jpg',
    },
    {
      id: 7,
-     height: 150
+     image: 'assets/imgs/image-07.jpg',
    },
    {
      id: 8,
-     height: 75
+     image: 'assets/imgs/image-06.jpg',
    },
    {
      id: 9,
-     height: 150
-   },
-   {
-     id: 10,
-     height: 75
+     image: 'assets/imgs/image-09.jpg',
    }
  ]
