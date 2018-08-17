@@ -10,6 +10,7 @@ import { ContactsPage } from '../pages/contacts/contacts';
 import { ComponentsModule } from '../components/components.module';
 import { ThemeServiceProvider } from '../providers/theme-service/theme-service';
 import { Ng2CacheModule } from 'ng2-cache';
+import { Geolocation } from '@ionic-native/geolocation';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { Ng2CacheModule } from 'ng2-cache';
   providers: [
     StatusBar,
     SplashScreen,
+    Geolocation,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     ThemeServiceProvider
   ]
