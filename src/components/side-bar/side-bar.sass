@@ -16,16 +16,45 @@ side-bar
       position: absolute
       height: 100%
       width: 60px
-    .avatar
-      position: absolute
-      height: 40px
-      width: 40px
-      background-color: grey
-      top: 10px
-      border-radius: 50%
-      margin-left: 10px
-      img
+    .profile-info
+      height: 60px
+      width: 100%
+      display: flex
+      .info-cont
+        margin-top: 10px
+        height: 50px
+        width: 100%
+        .name
+          height: 20px
+          width: 100%
+          span
+            color: white
+            font-size: 20px
+            padding-left: 10px
+            font-family: 'roboto-bold'
+            padding-top: 0px
+        .status
+          min-height: 20px
+          height: 20px
+          width: 100%
+          padding-top: 3px
+          span
+            color: white
+            font-size: 13px
+            padding-left: 10px
+            font-family: 'roboto-light'
+            padding-top: 0px
+      .avatar
+        position: relative
+        height: 40px
+        min-width: 40px
+        max-width: 40px
+        background-color: grey
+        top: 10px
         border-radius: 50%
+        margin-left: 10px
+        img
+          border-radius: 50%
     .ic-01
       transition: 0.4s
       transform: translateX(-100px)
@@ -53,7 +82,7 @@ side-bar
       margin-left: 5%
       // background-color: #EBEBEB
       display: none
-      margin-top: 70px
+      margin-top: 10px
     .active-content
       display: block
       opacity: 1
@@ -65,7 +94,7 @@ side-bar
       height: 250px
       width: 0px
       margin-left: 10px
-      top: 60px
+      // top: 60px
       // background-color: #EBEBEB
       display: flex
       flex-direction: row
