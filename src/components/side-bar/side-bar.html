@@ -42,14 +42,14 @@
           <div  [ngClass]="active && activeTab == 'chema' ? 'active': ''"
             class="icon chema"
           ></div>
-          <span [hidden]="darkMode">Dark theme</span>
-          <span [hidden]="!darkMode">Light theme</span>
+          <span [hidden]="darkMode">{{vars[activeLang.code]['DARK_THEME']}}</span>
+          <span [hidden]="!darkMode">{{vars[activeLang.code]['LIGHT_THEME']}}</span>
       </div>
       <div class="bottom-icon-cont ic-02" (click)="onTab('settings')">
         <div  [ngClass]="active && activeTab == 'settings' ? 'active': ''"
           class="icon settings"
         ></div>
-        <span>Settings</span>
+        <span>{{vars[activeLang.code]['SETTINGS']}}</span>
       </div>
     </div>
   </div>

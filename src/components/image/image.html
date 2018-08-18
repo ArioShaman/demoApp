@@ -1,15 +1,15 @@
 <!-- Generated template for the ImageComponent component -->
-<div class="title-cont">Album</div>
+<div class="title-cont">{{vars[activeLang.code]['ALBUM']}}</div>
 <div class="album-preview">
   <div *ngFor="let albEl of album" class="album">
     <div [ngStyle]="{'background-image': 'url('+ albEl.smCover + ')'}" class="album-img">
       <!-- <img [src]="albEl.cover" alt="image"> -->
     </div>
-    <div class="album-name">{{albEl.name}}</div>
+    <div class="album-name">{{albEl.name[activeLang.code]}}</div>
   </div>
 </div>
 
-<div class="title-cont">Scenery</div>
+<div class="title-cont">{{vars[activeLang.code]['SCENERIES']}}</div>
 
 <div class="images" overflow-scroll=true>
   <!-- <div class="img"></div> -->

@@ -1,5 +1,6 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { ThemeServiceProvider } from '../../providers/theme-service/theme-service'
+import { LanguageServiceProvider } from '../../providers/language-service/language-service'
 
 @Component({
   selector: 'side-bar',
@@ -12,12 +13,22 @@ export class SideBarComponent {
   @Input() opened:boolean;
   public activeTab = 'image';
   public darkMode:boolean;
+  public activeLang;
+  public vars;
 
-  constructor( public themeService: ThemeServiceProvider) {
+  constructor(
+    public themeService: ThemeServiceProvider,
+    public langService: LanguageServiceProvider,
+  ) {
     this.darkMode = this.themeService.darkMode;
     this.themeService.darkModeChange.subscribe((value) => {
       this.darkMode = value;
     });
+    this.activeLang = this.langService.actLang;
+    this.vars = this.langService.getVars();
+    this.langService.actLangChange.subscribe((value) => {
+       this.activeLang = value;
+    });    
   }
 
   ngOnInit(){

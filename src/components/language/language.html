@@ -1,4 +1,14 @@
-<!-- Generated template for the LanguageComponent component -->
-<div>
-  {{text}}
+<div class="title-cont">{{vars[activeLang.code]['language-title']}}</div>
+
+<div class="lang-list" [ngClass]="[darkMode ? 'darkMode':'']">
+
+  <div class="lang" *ngFor="let lang of languages">
+    <div
+      [ngClass]="activeLang.name == lang.name ? 'active':''"
+      class="name"
+      (click)="changeLang(lang)"
+    >
+      {{lang.name}}
+    <div>
+  </div>
 </div>

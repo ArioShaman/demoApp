@@ -11,6 +11,7 @@ import { ComponentsModule } from '../components/components.module';
 import { ThemeServiceProvider } from '../providers/theme-service/theme-service';
 import { Ng2CacheModule } from 'ng2-cache';
 import { Geolocation } from '@ionic-native/geolocation';
+import { LanguageServiceProvider } from '../providers/language-service/language-service';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { Geolocation } from '@ionic-native/geolocation';
     SplashScreen,
     Geolocation,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    ThemeServiceProvider
+    ThemeServiceProvider,
+    LanguageServiceProvider
   ]
 })
 export class AppModule {}

@@ -11,7 +11,7 @@ export class ThemeServiceProvider {
     if (this.cache.get('darkMode')){
         this.darkMode = this.cache.get('darkMode');
       }else{
-        this.darkMode = false;
+        this.darkMode = true;
         this.cache.set('darkMode', this.darkMode);
       }
       console.log(this.darkMode);

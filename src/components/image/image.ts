@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IMAGES } from './images-list'
 import { ALBUM } from './album-list'
+import { LanguageServiceProvider } from '../../providers/language-service/language-service'
 
 
 @Component({
@@ -10,13 +11,20 @@ import { ALBUM } from './album-list'
 })
 export class ImageComponent {
 
-  text: string;
-
+  public activeLang;
+  public vars;
   public images = IMAGES;
   public album = ALBUM;
-  constructor() {
+
+  constructor(public langService: LanguageServiceProvider) {
+    this.activeLang = this.langService.actLang;
+    this.vars = this.langService.getVars();
+    this.langService.actLangChange.subscribe((value) => {
+       this.activeLang = value;
+    });
   }
+
   ngOnInit(){
-    console.log(this.images);
+    // console.log(this.images);
   }
 }
